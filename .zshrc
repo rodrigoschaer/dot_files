@@ -1,23 +1,14 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 typeset -U PATH path
 export GTK_IM_MODULE='fcitx'
 export QT_IM_MODULE='fcitx'
 export SDL_IM_MODULE='fcitx'
 export XMODIFIERS='@im=fcitx'
 
-
-# Path to your oh-my-zsh installation.
+# ZSH THEMES.
 export ZSH="$HOME/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="half-life"
 
-# Which plugins would you like to load?
+# ZSH PLUGINS
 plugins=(
 git 
 zsh-syntax-highlighting 
@@ -28,10 +19,10 @@ dirhistory
 
 source $ZSH/oh-my-zsh.sh
 
-# Example aliases
+# ALIASES
 alias open="xdg-open"
-alias zshconfig="xdg-open ~/.zshrc"
-alias ohmyzsh="xdg-open ~/.oh-my-zsh"
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
 function runShell() {
     if [ -n "$1" ]
     then
