@@ -1,52 +1,34 @@
-typeset -U PATH path
-export GTK_IM_MODULE='fcitx'
-export QT_IM_MODULE='fcitx'
-export SDL_IM_MODULE='fcitx'
-export XMODIFIERS='@im=fcitx'
-
-# ZSH THEMES.
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="half-life"
 
-# ZSH PLUGINS
+
 plugins=(
-git 
-zsh-syntax-highlighting 
-zsh-autosuggestions
-web-search
-dirhistory
+	git 
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# ALIASES
-alias open="xdg-open"
+# Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
-function runShell() {
-    if [ -n "$1" ]
-    then
-        cd ~/Cora/front-ibanking-shell && npm start -- "$1"
-        echo "rodando $1 localmente"
-    else
-        cd ~/Cora/front-ibanking-shell && npm start
-        echo "rodando todos os projetos em stage"
-    fi
-}
-function runCora() {
-    if [ -n "$1" ]
-    then
-        clear
-        cd ~/Cora/front-ibanking-"$1" && npm start
-    else
-        echo "ERRO: passe o nome do projeto" 
-    fi
-}
+
+alias npi="npm install --legacy-peer-deps"
+alias npci="npm ci --legacy-peer-deps"
+alias python="python3"
+alias vim="nvim"
+alias dup="docker-compose -f docker-compose.yml up"
+alias workflow="~/workflow.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 stty -ixon
 
-alias vim="nvim"
-alias nvimcfg="cd ~/.config/nvim/lua"
+[ -s ~/.luaver/luaver ] && . ~/.luaver/luaver
+

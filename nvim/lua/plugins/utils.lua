@@ -1,35 +1,5 @@
 require'nvim-web-devicons'.get_icons()
-
 -- Para Barra de status
-require "lfs"
-
-local function dot_git_exists()
-  local path = "./.git"
-  if (lfs.attributes(path, "mode") == "directory") then
-    return true
-  end
-  return false
-end
-
-if dot_git_exists() then
-  branch = '-branch'
-else 
-  branch = '-📁'
-  --branch = '-  '
-end
-
-local function get_var(my_var_name)
-  return vim.api.nvim_get_var(my_var_name)
-end
-
-extension = get_var("extension")
-
-if extension == "cpp" or extension == "hpp" or extension == "h" then
-  this_lsp = '-lsp_name'
-else
-  this_lsp = '-file_size'
-end
-
 
 require('staline').setup{
   sections = {

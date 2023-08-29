@@ -1,21 +1,13 @@
--- adiciona o tema 
-vim.cmd([[ syntax enable ]])
--- vim.cmd([[ colorscheme dracula ]])
--- https://github.com/navarasu/onedark.nvim
+-- Themes configurations:
 vim.cmd([[ set bg=dark ]])
 vim.cmd([[ set termguicolors ]])
 vim.cmd([[ colorscheme onedark ]])
-
-require('onedark').setup {
-    style = 'deep'
+require('onedark').setup{
+  style='darker'
 }
 require('onedark').load()
 
--- remove o erro de underscore
-vim.cmd([[ autocmd BufRead *.md syn match markdownError "\w\@<=\w\@=" ]])
-
--- configurações de terminal
-vim.cmd([[ set guicursor= ]])
+-- Vim configurations
 vim.cmd([[ set encoding=utf8 ]])
 vim.cmd([[ set nu! ]])
 vim.cmd([[ set mouse=a ]])
@@ -34,13 +26,10 @@ vim.cmd([[ set guicursor= ]])
 vim.cmd([[ set cursorline ]])
 vim.cmd([[ syntax on ]])
 
--- roda o PackerCompile sempre
+-- Recompiles automatically after installing packages with Packer
 vim.cmd([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
 ]])
-
---
-vim.cmd([[ let extension = expand('%:e') ]])
