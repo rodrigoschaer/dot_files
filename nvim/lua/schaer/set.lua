@@ -1,4 +1,5 @@
 vim.opt.guicursor = ""
+vim.opt.guifont = "JetBrainsMono Nerd Fonts Mono"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true

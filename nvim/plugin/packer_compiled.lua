@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/cora/.local/share/nvim/site/pack/packer/start/harpoon",
     url = "https://github.com/theprimeagen/harpoon"
   },
+  ["keys.nvim"] = {
+    loaded = true,
+    path = "/Users/cora/.local/share/nvim/site/pack/packer/start/keys.nvim",
+    url = "https://github.com/tamton-aquib/keys.nvim"
+  },
   ["lsp-zero.nvim"] = {
     loaded = true,
     path = "/Users/cora/.local/share/nvim/site/pack/packer/start/lsp-zero.nvim",
@@ -113,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/cora/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-material-icon"] = {
+    loaded = true,
+    path = "/Users/cora/.local/share/nvim/site/pack/packer/start/nvim-material-icon",
+    url = "https://github.com/DaikyXendo/nvim-material-icon"
   },
   ["nvim-treesitter"] = {
     loaded = true,

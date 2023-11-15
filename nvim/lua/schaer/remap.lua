@@ -32,6 +32,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- opens vim packieir
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/schaer/packer.lua<CR>");
+vim.keymap.set("n", "<leader>map", "<cmd>e ~/.config/nvim/lua/schaer/remap.lua<CR>");
 
 -- shoutout!!
 vim.keymap.set("n", "<leader><leader>", function()
