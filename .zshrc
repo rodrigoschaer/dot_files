@@ -20,6 +20,19 @@ alias python="python3"
 alias vim="nvim"
 alias dup="docker-compose -f docker-compose.yml up"
 alias workflow="~/workflow.sh"
+alias vimcfg="vim ~/.config/nvim"
+alias applyVimCfg="cp ~/.config/nvim ~/Personal/dot_files/nvim"
+
+function apply_vim() {
+    cp -R ~/.config/nvim ~/Personal/dot_files/nvim;
+
+    cd ~/Personal/dot_files;
+    env -i;
+    git add -A
+    git commit -m "$1"
+    git push origin master
+    echo "Commited $1 to dot_files repository";
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -32,3 +45,4 @@ stty -ixon
 
 [ -s ~/.luaver/luaver ] && . ~/.luaver/luaver
 
+export PATH="/usr/local/bin:$PATH"
