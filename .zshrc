@@ -22,16 +22,19 @@ alias dup="docker-compose -f docker-compose.yml up"
 alias workflow="~/workflow.sh"
 alias vimcfg="vim ~/.config/nvim"
 alias applyVimCfg="cp ~/.config/nvim ~/Personal/dot_files/nvim"
+alias sozsh="source ~/.zshrc"
+
+alias buildcpp="g++ -std=c++20 -o";
 
 function apply_vim() {
     cp -R ~/.config/nvim ~/Personal/dot_files/nvim;
 
     cd ~/Personal/dot_files;
     env -i;
-    git add -A
-    git commit -m "$1"
-    git push origin master
-    echo "Commited $1 to dot_files repository";
+    gaa -A
+    gc -m "$1"
+    ggpush
+    echo "Commited \"$1\" to dot_files repository";
 }
 
 export NVM_DIR="$HOME/.nvm"
