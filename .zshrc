@@ -34,7 +34,18 @@ function apply_vim() {
     gaa -A
     gc -m "$1"
     ggpush
-    echo "Commited \"$1\" to dot_files repository";
+    echo "Commited \"$1\" to nvim config in dot_files repository";
+}
+
+function apply_zsh() {
+    cp -R ~/.zshrc ~/Personal/dot_files/.zshrc;
+
+    cd ~/Personal/dot_files;
+    env -i;
+    gaa -A
+    gc -m "$1"
+    ggpush
+    echo "Commited \"$1\" to .zshrc in dot_files repository";
 }
 
 export NVM_DIR="$HOME/.nvm"
