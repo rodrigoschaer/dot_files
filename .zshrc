@@ -1,7 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="half-life"
 
-
 plugins=(
 	git 
 	zsh-autosuggestions
@@ -10,22 +9,23 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Example aliases
-alias zshconfig="vim ~/.zshrc"
+# Aliases
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
+## Shortcuts
 alias npi="npm install --legacy-peer-deps"
 alias npci="npm ci --legacy-peer-deps"
 alias python="python3"
 alias vim="nvim"
 alias dup="docker-compose -f docker-compose.yml up"
 alias workflow="~/workflow.sh"
-alias vimcfg="vim ~/.config/nvim"
-alias applyVimCfg="cp ~/.config/nvim ~/Personal/dot_files/nvim"
-alias sozsh="source ~/.zshrc"
 
+## C++
 alias buildcpp="g++ -std=c++20 -o";
 
+## Vim configurations
+alias vimcfg="vim ~/.config/nvim"
+alias applyVimCfg="cp ~/.config/nvim ~/Personal/dot_files/nvim"
 function apply_vim() {
     cp -R ~/.config/nvim ~/Personal/dot_files/nvim;
 
@@ -37,6 +37,9 @@ function apply_vim() {
     echo "Commited \"$1\" to nvim config in dot_files repository";
 }
 
+## Zsh configurations
+alias zshconfig="vim ~/.zshrc"
+alias sozsh="source ~/.zshrc"
 function apply_zsh() {
     cp -R ~/.zshrc ~/Personal/dot_files/.zshrc;
 
