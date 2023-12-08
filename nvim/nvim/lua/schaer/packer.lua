@@ -36,4 +36,5 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     use 'DaikyXendo/nvim-material-icon'
     use 'tamton-aquib/keys.nvim'
+    use 'm4xshen/autoclose.nvim'
 end)
