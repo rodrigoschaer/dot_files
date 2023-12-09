@@ -1,6 +1,3 @@
-vim.opt.guicursor = ""
-vim.opt.guifont = "JetBrainsMono Nerd Fonts Mono"
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -30,3 +27,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
+
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FF00B7" })
+vim.opt.cursorline = true
