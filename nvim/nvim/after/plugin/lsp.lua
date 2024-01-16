@@ -23,7 +23,6 @@ lsp_zero.format_on_save({
         ['tsserver'] = { 'javascript', 'typescript' },
         ['rust_analyzer'] = { 'rust' },
         ['gopls'] = { 'go' },
-        ['clangd'] = { 'cpp' },
     }
 })
 
@@ -41,7 +40,7 @@ require('mason-lspconfig').setup({
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_action = lsp_zero.cmp_action()
+
 
 cmp.setup({
     sources = {
@@ -54,6 +53,5 @@ cmp.setup({
         ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ['Tab'] = cmp_action.tab_complete(),
     }),
 })

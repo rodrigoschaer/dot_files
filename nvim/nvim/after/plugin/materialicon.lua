@@ -1,4 +1,4 @@
-require'nvim-material-icon'.setup {
+require 'nvim-material-icon'.setup {
   override = {
     zsh = {
       icon = "",
@@ -6,9 +6,9 @@ require'nvim-material-icon'.setup {
       cterm_color = "65",
       name = "Zsh"
     }
-  };
-  color_icons = true;
-  default = true;
+  },
+  color_icons = true,
+  default = true,
 }
 
-require'nvim-material-icon'.get_icons()
+require 'nvim-material-icon'.get_icons()

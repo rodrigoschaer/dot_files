@@ -1,9 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- selects all lines
-vim.keymap.set({ "v", "n" }, "<C-a>", "ggVG")
-
 -- moves block of code easily
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -24,7 +21,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
 -- takes to register the copy/paste system, so lines can be pasted outside vim
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 -- replaces the piece of text globally in the file
