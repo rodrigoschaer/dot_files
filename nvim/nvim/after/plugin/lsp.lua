@@ -28,7 +28,7 @@ lsp_zero.format_on_save({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'tsserver', 'rust_analyzer', 'lua_ls', 'clangd', 'cssls', 'gopls' },
+    ensure_installed = { 'tsserver', 'clangd', 'cssls', 'gopls' },
     handlers = {
         lsp_zero.default_setup,
         lua_ls = function()
