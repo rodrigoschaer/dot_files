@@ -64,8 +64,9 @@ return require('packer').startup(function(use)
     use 'lukas-reineke/indent-blankline.nvim'
 
     -- Set lualine as statusline
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
+    use 'nvim-lualine/lualine.nvim'
+
+    -- files tree
+    use 'nvim-tree/nvim-tree.lua'
+    use 'nvim-tree/nvim-web-devicons'
 end)
