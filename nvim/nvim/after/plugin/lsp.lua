@@ -12,6 +12,7 @@ lsp_zero.on_attach(function(_, bufnr)
 
     vim.keymap.set("n", "<leader>def", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+    vim.keymap.set({ "n", "v" }, "<leader>diag", function() vim.diagnostic.open_float() end, opts)
 end)
 
 lsp_zero.format_on_save({

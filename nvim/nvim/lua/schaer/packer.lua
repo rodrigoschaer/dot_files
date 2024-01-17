@@ -11,10 +11,10 @@ return require('packer').startup(function(use)
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
-        config = function()
+        --[[ config = function()
             vim.cmd('colorscheme rose-pine')
         end
-    })
+  ]] })
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -69,4 +69,7 @@ return require('packer').startup(function(use)
     -- files tree
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
+    use { 'mofiqul/dracula.nvim', config = function()
+        vim.cmd('colorscheme dracula')
+    end }
 end)
