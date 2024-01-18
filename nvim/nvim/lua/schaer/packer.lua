@@ -3,11 +3,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+
+    -- Theme
     use({
         'rose-pine/neovim',
         as = 'rose-pine',
@@ -15,6 +12,12 @@ return require('packer').startup(function(use)
             vim.cmd('colorscheme rose-pine')
         end
   ]] })
+    use { 'mofiqul/dracula.nvim', config = function()
+        vim.cmd('colorscheme dracula')
+    end }
+    use 'DaikyXendo/nvim-material-icon'
+
+    -- LSP
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v3.x',
@@ -31,9 +34,15 @@ return require('packer').startup(function(use)
     }
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use 'nvim-treesitter/playground'
+
+    -- file navigation
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.4',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
     use 'theprimeagen/harpoon'
     use 'mbbill/undotree'
-    use 'DaikyXendo/nvim-material-icon'
     use 'tamton-aquib/keys.nvim'
 
     -- git related
@@ -69,7 +78,20 @@ return require('packer').startup(function(use)
     -- files tree
     use 'nvim-tree/nvim-tree.lua'
     use 'nvim-tree/nvim-web-devicons'
-    use { 'mofiqul/dracula.nvim', config = function()
-        vim.cmd('colorscheme dracula')
-    end }
+
+    -- debugger
+    use 'mfussenegger/nvim-dap'
+    use { 'jay-babu/mason-nvim-dap.nvim',
+        dependencies = {
+            "williamboman/mason.nvim",
+            'mfussenegger/nvim-dap'
+        },
+        opts = {
+            handlers = {}
+        }
+    }
+    use {
+        "rcarriga/nvim-dap-ui",
+        dependencies = "mfussenegger/nvim-dap",
+    }
 end)
