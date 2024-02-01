@@ -27,6 +27,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- replaces the piece of text globally in the file
 vim.keymap.set("n", "<leader>d", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- replace incidence of searched word
+vim.keymap.set("n", "<leader>c", "cgn")
+
 -- gives file extension automatically
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
