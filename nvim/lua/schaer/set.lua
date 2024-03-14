@@ -1,7 +1,8 @@
--- sets leader to space
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+-- Sets leader to space
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
+-- Sets the global boolean have_nerd_font to true
 vim.g.have_nerd_font = true
 
 --[[ Line numbers configurations ]]
@@ -16,18 +17,17 @@ vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 vim.api.nvim_set_hl(0, "CursorLineNr", {
 	fg = "#FF00B7",
-	bold = true
+	bold = true,
 })
 vim.opt.cursorline = true
 
 -- Column limit highlight
-vim.opt.colorcolumn = "80"
-
+-- vim.opt.colorcolumn = "80"
 
 -- [[ vim.opt => Options from Vim ]]
 
 -- Enable mouse mode
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Hide mode from command
 vim.opt.showmode = false
@@ -36,13 +36,13 @@ vim.opt.showmode = false
 vim.opt.breakindent = true
 
 -- Enable pairing with System and Nvim clipboard
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 -- Save undo history
 vim.opt.undofile = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 50
@@ -56,13 +56,14 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
