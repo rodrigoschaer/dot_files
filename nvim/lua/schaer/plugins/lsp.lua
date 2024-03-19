@@ -1,7 +1,6 @@
 return { -- LSP Configuration & Plugins
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		-- 'hrsh7th/cmp-nvim-lsp',
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -132,6 +131,11 @@ return { -- LSP Configuration & Plugins
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format lua code
+			"gopls",
+			"kotlin-language-server",
+			"pyright",
+			"clangd",
+			"tsserver",
 		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
