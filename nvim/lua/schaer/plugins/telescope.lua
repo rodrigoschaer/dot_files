@@ -25,6 +25,7 @@ return { -- Telescope: The Fuzzy Finder (files, lsp, etc)
 	config = function()
 		-- [[ Configure Telescope ]]
 		-- See `:help telescope` and `:help telescope.setup()`
+
 		require("telescope").setup({
 			-- You can put your default mappings / updates / etc. in here
 			extensions = {
@@ -32,11 +33,13 @@ return { -- Telescope: The Fuzzy Finder (files, lsp, etc)
 					require("telescope.themes").get_dropdown(),
 				},
 			},
+			file_ignore_patterns = { "node_modules", "package-lock.json", ".git" },
 		})
 
 		-- Enable telescope extensions, if they are installed
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
+		pcall(require("telescope").load_extension, "live_grep_args")
 
 		-- See `:help telescope.builtin`
 		local builtin = require("telescope.builtin")
@@ -78,5 +81,10 @@ return { -- Telescope: The Fuzzy Finder (files, lsp, etc)
 		vim.keymap.set("n", "<leader>sn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
 		end, { desc = "[S]earch [N]eovim files" })
+
+		-- Extension to grep strings through files
+		vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+
+		-- Ignore file patters
 	end,
 }
