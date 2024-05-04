@@ -49,4 +49,9 @@ return {
 			ColorMyPencils("catppuccin-mocha")
 		end,
 	},
+
+	{
+		"Mofiqul/dracula.nvim",
+		name = "dracula",
+	},
 }
