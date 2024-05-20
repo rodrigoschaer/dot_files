@@ -76,4 +76,9 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 -- if err = nil
-vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
+vim.keymap.set(
+	"n",
+	"<leader>ee",
+	"oif err != nil {<CR>}<Esc>Oreturn err<Esc>",
+	{ desc = "Insert err not null checking in go" }
+)
