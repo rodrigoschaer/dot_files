@@ -11,6 +11,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias runH2="java -jar ~/h2/bin/h2-2.2.224.jar"
 
 ## Shortcuts
 alias npi="npm install --legacy-peer-deps"
@@ -25,9 +26,10 @@ alias buildcpp="g++ -std=c++20 -o";
 
 ## Vim configurations
 alias vimcfg="vim ~/.config/nvim"
-alias applyVimCfg="cp ~/.config/nvim ~/Personal/dot_files/nvim"
+alias applyToLocalVim="cp -R ~/Personal/dot_files/nvim/* ~/.config/nvim/"
 function apply_vim() {
-    cp -R ~/.config/nvim ~/Personal/dot_files/nvim;
+    cwd=$(pwd)
+    cp -R ~/.config/nvim/* ~/Personal/dot_files/nvim/
 
     cd ~/Personal/dot_files;
     env -i;
@@ -35,13 +37,14 @@ function apply_vim() {
     gc -m "$1"
     ggpush
     echo "Commited \"$1\" to nvim config in dot_files repository";
+    cd cwd 
 }
 
 ## Zsh configurations
 alias zshconfig="vim ~/.zshrc"
 alias sozsh="source ~/.zshrc"
 function apply_zsh() {
-    cp -R ~/.zshrc ~/Personal/dot_files/.zshrc;
+    cp -R ~/.zshrc ~/Personal/dot_files/;
 
     cd ~/Personal/dot_files;
     env -i;
